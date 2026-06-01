@@ -56,8 +56,9 @@ public class POM_tutorialninja {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, 500);"); 
         Thread.sleep(500); 
+        By dynamicAddToCartBtn = By.xpath("//h4/a[text()='" + product + "']/ancestor::div[@class='product-thumb']//button[contains(@onclick, 'cart.add')]");
         
-        wait.until(ExpectedConditions.elementToBeClickable(addToCartBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(dynamicAddToCartBtn)).click();
         Thread.sleep(2000); 
     }
 
