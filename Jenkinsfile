@@ -1,52 +1,47 @@
 pipeline {
     agent any
  
-    tools {
-        maven 'Maven3'
-    }
- 
     stages {
- 
         stage('Checkout') {
             steps {
+                // Pulls down your code along with the new Dockerfile
                 git branch: 'master',
                     url: 'https://github.com/AYUSH-YL/TutorialNinja.git'
             }
         }
- 
-        stage('Build') {
+
+        stage('Docker Build') {
             steps {
-                bat 'mvn clean'
+                echo 'Building Docker Image from Dockerfile...'
+                // Builds the container image and compiles code inside it
+                bat 'docker build -t cucumber-framework .'
             }
         }
  
-        stage('Compile') {
+        stage('Docker Run') {
             steps {
-                bat 'mvn compile'
+                echo 'Launching Container to execute Automation Tests...'
+                // Runs the container which automatically triggers TestRunner
+                bat 'docker run --rm cucumber-framework'
             }
         }
- 
-        stage('Test') {
-            steps {
-                bat 'mvn test'
-            }
-        }
- 
-        stage('Package') {
-            steps {
-                bat 'mvn package'
-            }
-        }
+
+        /* NOTE: These local host stages are no longer needed because 
+        the Docker container handles compilation, testing, and packaging internally.
+        
+        stage('Build') { steps { bat 'mvn clean' } }
+        stage('Compile') { steps { bat 'mvn compile' } }
+        stage('Test') { steps { bat 'mvn test' } }
+        stage('Package') { steps { bat 'mvn package' } }
+        */
     }
  
     post {
         success {
-            echo 'Build Successful'
+            echo 'Pipeline Execution Completed Successfully!'
         }
- 
         failure {
-            echo 'Build Failed'
+            echo 'Pipeline Execution Failed.'
         }
     }
 }
- 

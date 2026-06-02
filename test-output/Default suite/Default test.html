@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon May 25 11:32:37 IST 2026</td>
+<td>Started on:</td><td>Mon Jun 01 16:19:06 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>26 seconds (26805 ms)</td>
+<tr><td>Total time:</td><td>53 seconds (53285 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,33 +76,47 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='project.TestRunner.runScenario()'><b>runScenario</b><br>Test class: project.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User performs a complete shopping lifecycle", "Tutorial ninja automation"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(@onclick, &quot;cart.add(&apos;43&apos;)&quot;)] (tried for 10 second(s) with 500 milliseconds interval)
+<td title='StepDefinition.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinition.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful login, search, shopping cart, and logout", "Tutorial Ninja Simple Login and Shopping"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //h4/a[text()=&apos;iphone&apos;]/ancestor::div[@class=&apos;product-thumb&apos;]//button[contains(@onclick, &apos;cart.add&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.10&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55320}, goog:processID: 10556, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55320/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 103c086925a57a487e5f6bb00c784605
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54014}, goog:processID: 13716, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54014/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9a775bfbec5b89ddd2f827bc6628d58e
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at project.POM_demo.addProductToCartAndView(POM_demo.java:78)
-	at StepDefinition.TutorialNinjaSteps.user_adds_macbook(TutorialNinjaSteps.java:43)
-	at ✽.User adds a MacBook to the cart and views the cart(file:///C:/Users/admin/eclipse-workspace/TutorialNinja_bdd/src/test/resources/features/TutorialNinja.feature:8)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1710422448", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1710422448'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(@onclick, &quot;cart.add(&apos;43&apos;)&quot;)] (tried for 10 second(s) with 500 milliseconds interval)
+	at POMforTutorial.POM_tutorialninja.search(POM_tutorialninja.java:61)
+	at StepDefinition.Tutorial.search(Tutorial.java:45)
+	at ✽.User searches for &quot;iphone&quot; and adds it to the cart(file:///C:/Users/admin/eclipse-workspace/TutorialNinja_bdd/src/test/resources/features/TutorialNinja.feature:11)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1026001741", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1026001741'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //h4/a[text()=&apos;iphone&apos;]/ancestor::div[@class=&apos;product-thumb&apos;]//button[contains(@onclick, &apos;cart.add&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.10&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55320}, goog:processID: 10556, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55320/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 103c086925a57a487e5f6bb00c784605
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54014}, goog:processID: 13716, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54014/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9a775bfbec5b89ddd2f827bc6628d58e
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at project.POM_demo.addProductToCartAndView(POM_demo.java:78)
-	at StepDefinition.TutorialNinjaSteps.user_adds_macbook(TutorialNinjaSteps.java:43)
-	at ✽.User adds a MacBook to the cart and views the cart(file:///C:/Users/admin/eclipse-workspace/TutorialNinja_bdd/src/test/resources/features/TutorialNinja.feature:8)
+	at POMforTutorial.POM_tutorialninja.search(POM_tutorialninja.java:61)
+	at StepDefinition.Tutorial.search(Tutorial.java:45)
+	at ✽.User searches for &quot;iphone&quot; and adds it to the cart(file:///C:/Users/admin/eclipse-workspace/TutorialNinja_bdd/src/test/resources/features/TutorialNinja.feature:11)
 </pre></div></td>
-<td>25</td>
-<td>project.TestRunner@4116aac9</td></tr>
+<td>32</td>
+<td>StepDefinition.TestRunner@4116aac9</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='StepDefinition.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinition.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful login, search, shopping cart, and logout", "Tutorial Ninja Simple Login and Shopping"</td>
+<td></td>
+<td>19</td>
+<td>StepDefinition.TestRunner@4116aac9</td></tr>
 </table><p>
 </body>
 </html>

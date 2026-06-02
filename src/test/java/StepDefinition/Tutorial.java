@@ -14,6 +14,12 @@ public class Tutorial {
     @Given("User is on the Tutorial Ninja application")
     public void tutorial_ninja() {
         Hooks.driver.get("https://tutorialsninja.com/demo/");
+        Hooks.driver.manage().window().maximize();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         pom = new POM_tutorialninja(Hooks.driver); 
     }
 
