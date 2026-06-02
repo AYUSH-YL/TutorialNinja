@@ -5,9 +5,8 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 echo 'Pulling the latest code from GitHub...'
-                // Clean plain-text URL to prevent git protocol errors
                 git branch: 'master',
-                    url: '[https://github.com/AYUSH-YL/TutorialNinja.git](https://github.com/AYUSH-YL/TutorialNinja.git)'
+                    url: 'https://github.com/AYUSH-YL/TutorialNinja.git'
             }
         }
 
