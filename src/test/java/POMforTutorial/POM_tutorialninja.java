@@ -14,25 +14,30 @@ public class POM_tutorialninja {
 
     WebDriver driver;
     WebDriverWait wait;
-    By myAccountMenu = By.xpath("//span[text()='My Account']");
+    // Fixed: Target the dropdown-toggle link that contains My Account
+    By myAccountMenu = By.xpath("//li[@class='dropdown']/a[contains(@class, 'dropdown-toggle') and contains(., 'My Account')]");
     By loginDropdownItem = By.linkText("Login");
     By emailField = By.id("input-email");
     By passwordField = By.id("input-password");
     By loginBtn = By.xpath("//input[@value='Login']");
     
     By searchBox = By.name("search");
-    By addToCartBtn = By.xpath("(//button[contains(@onclick, 'cart.add')])[1]");
+    // Fixed: Use first button with cart.add onclick
+    By addToCartBtn = By.xpath("//button[contains(@onclick, 'cart.add')]");
     
     By mainCartBtn = By.id("cart-total");
-    By viewCartLink = By.xpath("//strong[contains(., 'View Cart')]");
+    // Fixed: Target the link with View Cart text
+    By viewCartLink = By.xpath("//a[contains(@href, 'checkout/cart')]");
     By removeBtn = By.xpath("//button[@data-original-title='Remove']");
     
-    By logoutDropdownItem = By.linkText("Logout");
+    // Fixed: Target logout link by text
+    By logoutDropdownItem = By.xpath("//a[contains(text(), 'Logout')]");
 
     public POM_tutorialninja(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
+    
     public void Login() {
         wait.until(ExpectedConditions.elementToBeClickable(myAccountMenu)).click();
         wait.until(ExpectedConditions.elementToBeClickable(loginDropdownItem)).click();
@@ -63,7 +68,11 @@ public class POM_tutorialninja {
 
     public void cart() {
         wait.until(ExpectedConditions.elementToBeClickable(mainCartBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(viewCartLink)).click();
+        // Wait for dropdown to appear and click the cart link
+        WebElement cartLink = wait.until(ExpectedConditions.elementToBeClickable(
+            By.xpath("//a[contains(@href, 'checkout/cart')]")
+        ));
+        cartLink.click();
     }
 
     public void remove() throws InterruptedException {
