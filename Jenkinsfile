@@ -5,6 +5,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 echo 'Pulling the latest code from GitHub...'
+                // Clean plain-text URL to prevent git protocol errors
                 git branch: 'master',
                     url: '[https://github.com/AYUSH-YL/TutorialNinja.git](https://github.com/AYUSH-YL/TutorialNinja.git)'
             }
@@ -13,7 +14,6 @@ pipeline {
         stage('Stop Existing Containers') {
             steps {
                 echo 'Cleaning up any running grid containers...'
-                // Ensures we start with a clean slate and avoid port conflicts
                 bat 'docker-compose down'
             }
         }
@@ -37,7 +37,6 @@ pipeline {
     post {
         always {
             echo 'Finalizing execution: Cleaning up container networks...'
-            // Guarantees containers are safely stopped even if the build fails
             bat 'docker-compose down'
         }
         success {
